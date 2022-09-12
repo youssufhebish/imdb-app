@@ -1,0 +1,47 @@
+name: movies
+description: A movies app depends on imdb api
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  dio: ^4.0.6
+  lottie: ^1.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.9
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/icon.png"
+
+flutter_native_splash:
+  color: "#171612"
+  image: assets/images/icon.png
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/cairo-regular.ttf
+        - asset: assets/fonts/cairo-bold.ttf
+          weight: 700
