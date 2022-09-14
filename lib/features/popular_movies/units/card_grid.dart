@@ -27,20 +27,20 @@ class CardGrid extends StatelessWidget {
             return const MoviesErrorWidget();
           } else {
             return removeScrollingGlowSingleChild(
-              child: GridView.count(
+              child: GridView.builder(
                 padding: const EdgeInsets.all(12.5),
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisSpacing: 35.0,
-                mainAxisSpacing: 50.0,
-                childAspectRatio: 1 / 1.65,
-                crossAxisCount: 2,
-                children: List.generate(
-                  cubit.moviesModel.items!.length,
-                  (index) => MovieCard(
-                    moviesModelItems: cubit.moviesModel.items![index]!,
-                  ),
+                itemCount: cubit.moviesModel.items!.length,
+                itemBuilder: (context, index) => MovieCard(
+                  moviesModelItems: cubit.moviesModel.items![index]!,
+                ),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 35.0,
+                  mainAxisSpacing: 50.0,
+                  childAspectRatio: 1 / 1.65,
                 ),
               ),
             );
